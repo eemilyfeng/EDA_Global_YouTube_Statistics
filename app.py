@@ -60,11 +60,26 @@ if vis == "Question 1":
     top_subscribers = filtered_df.sort_values(by='Subscribers', ascending=False).head(10)
     top_views = filtered_df.sort_values(by='Video Views', ascending=False).head(10)
 
-    fig_subscribers = px.bar(top_subscribers, x='Youtuber', y='Subscribers', color='Subscribers')
+    # Plot for Top 10 YouTubers by Subscribers
+    fig_subscribers = px.bar(
+        top_subscribers,
+        x='Youtuber',
+        y='Subscribers',
+        color='Subscribers',
+        title='Top 10 YouTubers in Terms of Number of Subscribers'
+    )
     st.plotly_chart(fig_subscribers)
 
-    fig_views = px.bar(top_views, x='Youtuber', y='Video Views', color='Video Views')
+    # Plot for Top 10 YouTubers by Video Views
+    fig_views = px.bar(
+        top_views,
+        x='Youtuber',
+        y='Video Views',
+        color='Video Views',
+        title='Top 10 YouTubers in Terms of Views (in billions)'
+    )
     st.plotly_chart(fig_views)
+
 
 # Question 2 Code
 elif vis == "Question 2":
